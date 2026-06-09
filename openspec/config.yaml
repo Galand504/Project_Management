@@ -1,0 +1,39 @@
+schema: spec-driven
+
+context: |
+  Tech stack: PHP 8+ (vanilla, no framework), MySQL (mysqli), HTML/CSS/JS
+  Architecture: Feature-organized procedural PHP (Login, MenuPrincipal, Chat, Profile, Graficos, Idioma)
+  Testing: No test runner or test files detected
+  Style: No linter, type checker, or formatter configured
+  Database: sistemagestionproyectos (MySQL) — tables: usuario, persona, foro, proyecto, tarea, equipo, documento
+  I18n: Custom PHP-based translation system (lang.php)
+  PDF: FPDF library for report generation
+  UI: SB Admin 2 dashboard template + custom CSS
+
+strict_tdd: false
+
+rules:
+  proposal:
+    - Include rollback plan for risky changes
+    - Consider backward compatibility with existing session-based auth
+  specs:
+    - Use Given/When/Then for scenarios
+    - Use RFC 2119 keywords (MUST, SHALL, SHOULD, MAY)
+  design:
+    - Document database schema dependencies explicitly
+    - Account for existing mysqli procedural patterns
+  tasks:
+    - Group by phase, use hierarchical numbering
+    - Keep tasks completable in one session
+    - Respect existing directory structure by feature
+  apply:
+    - Follow existing code patterns (procedural PHP, mysqli)
+    - Do not introduce frameworks without explicit approval
+    tdd: false
+    test_command: ""
+  verify:
+    test_command: ""
+    build_command: ""
+    coverage_threshold: 0
+  archive:
+    - Warn before merging destructive deltas
